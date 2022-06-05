@@ -4,8 +4,11 @@
     <%= book.title %>
   </p>
   <p>
+    <strong>Authors:</strong>
+    <%= book.authors.map(&:full_name).join(", ") %>
+  </p>
+  <p>
     <strong>Genre:</strong>
     <%= book.genre.name %>
   </p>
-
 </div>

@@ -18,8 +18,9 @@
     <%#= form.select :author_ids, options_from_collection_for_select(Author.all, :id, :fullname), prompt: "Select Authors", multiple: true %>
 
     <%= form.collection_select(:genre_id, Genre.all, :id, :name) %>
+    <%= form.select :language, Book::languages.keys.to_a.map { |l| [l.humanize, l] } %>
 
-    <%= form.collection_check_boxes :author_ids, Author.all, :id, :fullname do |a| %>
+    <%= form.collection_check_boxes :author_ids, Author.all, :id, :full_name do |a| %>
       <div class="collection-check-box">
         <%= a.check_box %>
         <%= a.label %>
