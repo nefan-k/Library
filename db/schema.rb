@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_05_162111) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "genres_id"
-    t.index ["genres_id"], name: "index_books_on_genres_id"
+    t.integer "genre_id"
+    t.index ["genre_id"], name: "index_books_on_genre_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -25,5 +25,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_05_162111) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "books", "genres", column: "genres_id"
+  add_foreign_key "books", "genres"
 end
