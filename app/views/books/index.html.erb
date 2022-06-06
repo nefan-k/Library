@@ -1,6 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+  <nav>
+    <%= link_to "Authors", authors_path %> |
+    <%= link_to "Genres", genres_path %>
+  </nav>
+</p>
 
 <h1>Books</h1>
+
+
 
 <div>
   <%= form_tag books_path, method: :get do %>
@@ -20,7 +28,3 @@
 </div>
 
 <%= link_to "New book", new_book_path %>
-
-<hr>
-<%= link_to "Authors", authors_path %>
-<%= link_to "Genres", genres_path %>

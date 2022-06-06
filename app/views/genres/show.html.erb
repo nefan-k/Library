@@ -5,6 +5,7 @@
 <div>
   <%= link_to "Edit this genre", edit_genre_path(@genre) %> |
   <%= link_to "Back to genres", genres_path %>
-
-  <%= button_to "Destroy this genre", @genre, method: :delete %>
 </div>
+<p>
+  <%= button_to "Destroy this genre", @genre, method: :delete, form: {data: { turbo_confirm: 'Are you sure?'}} %>
+</p>

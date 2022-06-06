@@ -1,4 +1,10 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+  <nav>
+    <%= link_to "Books", books_path %> |
+    <%= link_to "Genres", genres_path %>
+  </nav>
+</p>
 
 <h1>Authors</h1>
 
@@ -20,7 +26,3 @@
 </div>
 
 <%= link_to "New author", new_author_path %>
-
-<hr>
-<%= link_to "Books", books_path %>  
-<%= link_to "Genres", genres_path %>

@@ -2,9 +2,19 @@
 
 <%= render @author %>
 
+<strong>Books:</strong>
+<ul>
+  <% @author.books.each do |b|%>
+    <li>
+      <%= link_to b.title, b %>
+    </li>
+  <% end %>
+</ul>
+
 <div>
   <%= link_to "Edit this author", edit_author_path(@author) %> |
   <%= link_to "Back to authors", authors_path %>
-
-  <%= button_to "Destroy this author", @author, method: :delete %>
 </div>
+<p>
+  <%= button_to "Destroy this author", @author, method: :delete, form: {data: { turbo_confirm: 'Are you sure?'}} %>
+</p>
