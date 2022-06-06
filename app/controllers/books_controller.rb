@@ -3,7 +3,11 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+    if params[:q].present?
+      @books = Book.where('title ILIKE ?', "%#{params[:q]}%")
+    else
+      @books = Book.all
+    end
   end
 
   # GET /books/1 or /books/1.json

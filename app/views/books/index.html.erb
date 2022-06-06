@@ -2,6 +2,14 @@
 
 <h1>Books</h1>
 
+<div>
+  <%= form_tag books_path, method: :get do %>
+    <%= label_tag :q, "Search:" %>
+    <%= text_field_tag :q %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
+
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
