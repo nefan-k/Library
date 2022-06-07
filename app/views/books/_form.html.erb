@@ -17,14 +17,6 @@
 
     <%#= form.select :author_ids, options_from_collection_for_select(Author.all, :id, :fullname), prompt: "Select Authors", multiple: true %>
 
-    <select>
-    <option selected="selected" value="1">Title</option>
-    <option value="2">Mr</option>
-    <option value="3">Miss</option>
-    <option value="4">Mrs</option>
-    <option value="5">Other</option>
-    </select>
-
     <%= form.collection_select(:genre_id, Genre.all, :id, :name) %>
     <%= form.select :language, Book::languages.keys.to_a.map { |l| [l.humanize, l] } %>
 
